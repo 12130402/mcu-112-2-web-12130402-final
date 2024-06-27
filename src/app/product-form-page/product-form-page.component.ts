@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../product';
 import { IProductForm } from '../interface/product-form.interface';
@@ -13,6 +13,10 @@ import { IProductForm } from '../interface/product-form.interface';
   styleUrl: './product-form-page.component.css',
 })
 export class ProductFormPageComponent implements OnInit {
+  onAddAuthors() {
+    throw new Error('Method not implemented.');
+  }
+  authors: any;
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -21,6 +25,7 @@ export class ProductFormPageComponent implements OnInit {
   form = new FormGroup<IProductForm>({
     id: new FormControl<number | null>(null),
     name: new FormControl<string | null>(null),
+    authors: new FormArray<FormControl<string | null>>([]),
     company: new FormControl<string | null>(null),
     isShow: new FormControl<boolean>(false, { nonNullable: true }),
     price: new FormControl<string | null>(null),
