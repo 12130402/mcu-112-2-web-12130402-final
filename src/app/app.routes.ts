@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { productResolver } from '../resolver/product.resolver';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ProductDetailPageComponent } from './product-detail-page/product-detail-page.component';
-import { ProductFormPageComponent } from './product-form-page/product-form-page.component';
+import { ProductFormPageComponent } from './product-form-page/ProductFormPageComponent';
 import { ProductPageComponent } from './product-page/product-page.component';
 
 export const routes: Routes = [
