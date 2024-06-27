@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../product';
 import { IProductForm } from '../interface/product-form.interface';
@@ -13,6 +13,9 @@ import { IProductForm } from '../interface/product-form.interface';
   styleUrl: './product-form-page.component.css',
 })
 export class ProductFormPageComponent implements OnInit {
+  name: any;
+  company: any;
+  price: any;
   onAddAuthors() {
     throw new Error('Method not implemented.');
   }
@@ -24,11 +27,11 @@ export class ProductFormPageComponent implements OnInit {
 
   form = new FormGroup<IProductForm>({
     id: new FormControl<number | null>(null),
-    name: new FormControl<string | null>(null),
+    name: new FormControl<string | null>(null, { validators: [Validators.required] }),
     authors: new FormArray<FormControl<string | null>>([]),
-    company: new FormControl<string | null>(null),
+    company: new FormControl<string | null>(null, { validators: [Validators.required] }),
     isShow: new FormControl<boolean>(false, { nonNullable: true }),
-    price: new FormControl<string | null>(null),
+    price: new FormControl<string | null>(null, { validators: [Validators.required, Validators.pattern('^[0-9]$')] }),
   });
 
   product!: Product;
