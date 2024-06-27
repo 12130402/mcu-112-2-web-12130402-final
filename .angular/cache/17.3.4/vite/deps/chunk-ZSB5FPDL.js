@@ -30,8 +30,6 @@ import {
   TemplateRef,
   Version,
   ViewContainerRef,
-  __spreadProps,
-  __spreadValues,
   booleanAttribute,
   createNgModule,
   findLocaleData,
@@ -59,7 +57,11 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-ORK62JUO.js";
+} from "./chunk-OI6EX5JM.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-SXIXOCJ4.js";
 
 // node_modules/@angular/common/fesm2022/common.mjs
 var _DOM = null;
@@ -5029,4 +5031,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-YRGNH7G3.js.map
+//# sourceMappingURL=chunk-ZSB5FPDL.js.map
