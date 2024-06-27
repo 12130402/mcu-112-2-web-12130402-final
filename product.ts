@@ -1,14 +1,22 @@
 export class Product {
-  constructor(
-    public id: number,
-    public name: string,
-    public company: string,
-    public price: number,
-    public isShow: boolean,
-    public createDate: Date,
-    public modifyDate?: Date
-  ) {}
-  setDisplay(isShow: boolean): void {
-    this.isShow = isShow;
+  constructor(initData?: Partial<Product>) {
+    Object.assign(this, initData);
+    this.createDate = new Date();
   }
+
+  id!: number;
+
+  name!: string;
+
+  authors!: string;
+
+  company!: string;
+
+  isShow!: boolean;
+
+  imgUrl!: string;
+
+  createDate!: Date;
+
+  price!: number;
 }
