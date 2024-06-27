@@ -6,6 +6,7 @@ import { Product } from '../../../product';
   providedIn: 'root',
 })
 export class ProductService {
+  [x: string]: any;
   private _data = [
     new Product({
       id: 1,
