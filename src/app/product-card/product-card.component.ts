@@ -8,6 +8,7 @@ import { Component, EventEmitter, HostBinding, Input, Output, booleanAttribute, 
   styleUrl: './product-card.component.css',
 })
 export class ProductCardComponent {
+  [x: string]: any;
   @Input({ required: true, transform: numberAttribute }) id!: number;
   @Input() productName!: string;
   @Input() authors!: string[];
@@ -23,7 +24,6 @@ export class ProductCardComponent {
   @HostBinding('class')
   class = 'product-card';
 
-  onSetDisplay(isShow: boolean): void {
-    this.isShowChange.emit(isShow);
-  }
+  @Output()
+  view = new EventEmitter<void>();
 }
