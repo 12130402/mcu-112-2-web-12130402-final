@@ -13,12 +13,10 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductPageComponent implements OnInit {
   router = inject(Router);
-  private productService!: ProductService;
-
+  private productService = inject(ProductService);
   products!: Product[];
 
   ngOnInit(): void {
-    this.productService = new ProductService();
     this.products = this.productService.getList();
   }
   onEdit(product: Product): void {
