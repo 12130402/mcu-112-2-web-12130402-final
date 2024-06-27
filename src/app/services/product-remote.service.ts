@@ -19,4 +19,7 @@ export class ProductRemoteService extends ProductService {
   override getList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.url);
   }
+  override add(product: Product): Observable<Product> {
+    return this.httpClient.post<Product>(this.url, { ...product });
+  }
 }
